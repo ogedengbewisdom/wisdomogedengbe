@@ -1,7 +1,7 @@
 "use client";
 
-import type { MouseEvent, ReactNode } from "react";
-import { useRef } from "react";
+import type { KeyboardEvent, MouseEvent, ReactNode } from "react";
+import { useEffect, useRef } from "react";
 
 export default function MobileNavigationDialog({
   children,
@@ -9,14 +9,36 @@ export default function MobileNavigationDialog({
   children: ReactNode;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
-  function closeMenu() {
-    dialogRef.current?.close();
+  useEffect(() => {
+    function closeMenuOnDesktopResize() {
+      if (window.matchMedia("(min-width: 1001px)").matches) {
+        dialogRef.current?.close();
+      }
+    }
+
+    window.addEventListener("resize", closeMenuOnDesktopResize);
+    return () => {
+      window.removeEventListener("resize", closeMenuOnDesktopResize);
+    };
+  }, []);
+
+  function closeMenu(restoreFocus = false) {
+    const dialog = dialogRef.current;
+    if (!dialog?.open) {
+      return;
+    }
+
+    dialog.close();
+    if (restoreFocus) {
+      window.requestAnimationFrame(() => triggerRef.current?.focus());
+    }
   }
 
   function handleDialogClick(event: MouseEvent<HTMLDialogElement>) {
     if (event.target === dialogRef.current) {
-      closeMenu();
+      closeMenu(true);
       return;
     }
 
@@ -24,7 +46,13 @@ export default function MobileNavigationDialog({
       event.target instanceof Element &&
       event.target.closest("a[href]")
     ) {
-      closeMenu();
+      closeMenu(true);
+    }
+  }
+
+  function handleDialogKeyDown(event: KeyboardEvent<HTMLDialogElement>) {
+    if (event.key === "Escape") {
+      closeMenu(true);
     }
   }
 
@@ -35,6 +63,7 @@ export default function MobileNavigationDialog({
         aria-label="Open navigation menu"
         className="mobile-menu-trigger"
         onClick={() => dialogRef.current?.showModal()}
+        ref={triggerRef}
         type="button"
       >
         <span aria-hidden="true" className="hamburger-icon">
@@ -47,10 +76,11 @@ export default function MobileNavigationDialog({
         aria-label="Site navigation"
         className="mobile-menu-dialog"
         onClick={handleDialogClick}
+        onKeyDown={handleDialogKeyDown}
         ref={dialogRef}
       >
         <div className="mobile-menu-header">
-          <a className="brand" href="#top" onClick={closeMenu}>
+          <a className="brand" href="#top" onClick={() => closeMenu(true)}>
             <span aria-hidden="true" className="brand-mark">
               +
             </span>
@@ -59,7 +89,7 @@ export default function MobileNavigationDialog({
           <button
             aria-label="Close navigation menu"
             className="mobile-menu-close"
-            onClick={closeMenu}
+            onClick={() => closeMenu(true)}
             type="button"
           >
             <span aria-hidden="true">×</span>
