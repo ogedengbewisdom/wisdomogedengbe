@@ -1,0 +1,39 @@
+.section-kicker,
+.small-label {
+  font-size: var(--text-body);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.content-section {
+  padding-block: 48px;
+}
+
+.section-kicker {
+  margin: 0 0 19px;
+  color: var(--accent);
+  font-size: var(--text-body);
+  letter-spacing: 0.13em;
+}
+
+.small-label {
+  margin: 0;
+  color: var(--subtle);
+  font-size: var(--text-heading-sm);
+}
+
+.projects-heading .section-kicker {
+  margin-bottom: 18px;
+}
+
+.project-engineering .section-kicker {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 700px) {
+
+  .content-section {
+    padding-block: 38px;
+  }
+}

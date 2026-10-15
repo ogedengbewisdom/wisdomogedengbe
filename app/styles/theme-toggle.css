@@ -1,0 +1,89 @@
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-quiet);
+}
+
+.theme-option {
+  display: inline-flex;
+  min-height: 29px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--subtle);
+  cursor: pointer;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.theme-option[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--text-strong);
+}
+
+.theme-option svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.theme-option[aria-pressed="true"] svg {
+  color: var(--accent);
+}
+
+@media (max-width: 700px) {
+
+  .theme-option span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .theme-option {
+    width: 29px;
+    padding-inline: 0;
+  }
+
+  .theme-toggle {
+    gap: 0;
+    padding: 3px;
+  }
+
+  .theme-option {
+    min-height: 27px;
+    gap: 4px;
+    padding-inline: 7px;
+    font-size: var(--text-small);
+  }
+
+  .theme-option svg {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .theme-option {
+    padding-inline: 5px;
+    font-size: var(--text-small);
+  }
+}

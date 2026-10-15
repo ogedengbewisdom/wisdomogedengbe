@@ -1,0 +1,24 @@
+[data-motion-reveal] {
+  scroll-margin-top: 96px;
+}
+
+[data-motion-revealed="true"] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.engineering-stagger-item {
+  display: flex;
+  min-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-motion-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

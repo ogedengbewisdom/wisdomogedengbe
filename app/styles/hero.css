@@ -1,0 +1,352 @@
+.eyebrow {
+  font-size: var(--text-body);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 1px solid transparent;
+  background: var(--accent);
+  color: var(--button-text);
+  font-size: var(--text-small);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.button span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.hero {
+  display: grid;
+  min-height: 626px;
+  grid-template-columns: minmax(0, 1fr) minmax(370px, 0.97fr);
+  align-items: center;
+  gap: 68px;
+  padding-block: 72px 58px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 32px;
+  color: var(--accent-ink);
+  font-size: var(--text-body);
+  letter-spacing: 0.15em;
+}
+
+.eyebrow>span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.accent-period {
+  color: var(--accent);
+}
+
+.hero-role {
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-size: var(--text-body);
+}
+
+.hero-intro {
+  max-width: 480px;
+  margin: 19px 0 23px;
+  color: var(--subtle);
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-actions .button {
+  font-size: 0.65rem;
+}
+
+.button {
+  min-height: 43px;
+  padding: 0 18px;
+  border-radius: 9px;
+}
+
+.button-secondary {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text-strong);
+}
+
+.hero-facts {
+  display: flex;
+  align-items: center;
+  margin-top: 37px;
+}
+
+.hero-facts>div {
+  display: flex;
+  min-width: 112px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero-facts>div+div {
+  min-width: 190px;
+  padding-left: 24px;
+  border-left: 1px solid var(--border);
+}
+
+.hero-facts strong {
+  color: var(--text-strong);
+  font-size: 1.3125rem;
+  letter-spacing: -0.045em;
+}
+
+.hero-facts span {
+  color: var(--subtle);
+  font-size: var(--text-small);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 484px;
+  justify-self: end;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 15px 38px rgb(0 0 0 / 11%);
+}
+
+.browser-bar {
+  display: flex;
+  height: 31px;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 3px 7px 0;
+  color: var(--subtle);
+  font-size: var(--text-small);
+}
+
+.browser-bar i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff8d30;
+}
+
+.browser-bar i:nth-child(2) {
+  background: #ffc563;
+}
+
+.browser-bar i:nth-child(3) {
+  background: #73c98c;
+}
+
+.browser-bar span {
+  margin-left: 9px;
+}
+
+.hero-image-placeholder {
+  position: relative;
+  display: grid;
+  min-height: 405px;
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background:
+    linear-gradient(90deg, transparent 49.8%, rgb(255 255 255 / 8%) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 49.8%, rgb(255 255 255 / 8%) 50%, transparent 50.2%),
+    var(--preview);
+  background-size: 28px 28px;
+}
+
+.monogram-ring {
+  display: grid;
+  width: min(60%, 240px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 2px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffad58, var(--accent));
+  box-shadow: 0 0 0 18px rgb(255 116 23 / 13%);
+  color: #fff;
+  font-size: clamp(3.375rem, 6vw, 4.875rem);
+  font-weight: 700;
+  letter-spacing: -0.09em;
+}
+
+.hero-art-caption {
+  position: absolute;
+  right: 18px;
+  bottom: 17px;
+  left: 18px;
+  display: flex;
+  min-height: 87px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 14px 17px;
+  border: 1px solid var(--border-soft);
+  border-radius: 11px;
+  background: var(--surface);
+}
+
+.hero-art-caption span,
+.hero-art-caption small {
+  color: var(--subtle);
+  font-size: var(--text-small);
+}
+
+.hero-art-caption span {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-art-caption strong {
+  color: var(--text-strong);
+  font-size: var(--text-body);
+}
+
+.status-card {
+  position: absolute;
+  bottom: 14px;
+  left: -46px;
+  display: flex;
+  min-width: 151px;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 12%);
+}
+
+.status-check {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.status-card>span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-card strong {
+  color: var(--text-strong);
+  font-size: var(--text-small);
+  text-transform: uppercase;
+}
+
+.status-card small {
+  color: var(--subtle);
+  font-size: var(--text-small);
+}
+
+@media (max-width: 1000px) {
+
+  .hero {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+    gap: 36px;
+    padding-block: 70px 52px;
+  }
+
+  .hero-image-placeholder {
+    min-height: 340px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 29px;
+    padding-block: 52px 36px;
+  }
+
+  .eyebrow {
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4375rem, 11vw, 3.5625rem);
+  }
+
+  .hero-role {
+    font-size: var(--text-body);
+  }
+
+  .hero-intro {
+    font-size: var(--text-body);
+  }
+
+  .hero-art {
+    max-width: 460px;
+    justify-self: center;
+  }
+
+  .hero-image-placeholder {
+    min-height: 300px;
+  }
+
+  .status-card {
+    bottom: -14px;
+    left: -9px;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .hero-facts>div,
+  .hero-facts>div+div {
+    min-width: 0;
+  }
+
+  .hero-facts>div+div {
+    flex: 1;
+    padding-left: 12px;
+  }
+}
